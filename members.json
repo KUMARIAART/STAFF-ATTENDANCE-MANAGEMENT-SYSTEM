@@ -10,7 +10,7 @@
     {
       "username": "Prachi More",
       "password": "Prachi@123",
-      "user_type": "Staff",
+      "user_type": "Supervisor",
       "gender": "Female",
       "address": "Madhya Pradesh"
     },
@@ -24,7 +24,7 @@
     {
       "username": "Ravindra",
       "password": "Ravi@123",
-      "user_type": "Staff",
+      "user_type": "Admin",
       "gender": "Male",
       "address": "Uttar Pradesh"
     },
