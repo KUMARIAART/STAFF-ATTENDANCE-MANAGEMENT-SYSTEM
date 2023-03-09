@@ -1,44 +1,12 @@
 {
   "Members": [
     {
-      "username": "Prachi More",
-      "password": "Prachi@123",
-      "user_type": "Supervisor",
-      "gender": "Female",
-      "address": "Madhya Pradesh",
-      "id": 2
-    },
-    {
-      "username": "Saloni Chawada",
-      "password": "Saloni@123",
-      "user_type": "Supervisor",
-      "gender": "Female",
-      "address": "Madhya Pradesh",
-      "id": 3
-    },
-    {
       "username": "Ravindra",
       "password": "Ravi@123",
       "user_type": "Admin",
       "gender": "Male",
       "address": "Uttar Pradesh",
       "id": 4
-    },
-    {
-      "username": "Sheetal Malviya",
-      "password": "Sheetal@123",
-      "user_type": "Admin",
-      "gender": "Female",
-      "address": "Banglore",
-      "id": 5
-    },
-    {
-      "username": "Deepshikha",
-      "password": "Deep@123",
-      "user_type": "Supervisor",
-      "gender": "Female",
-      "address": "Jharkhand",
-      "id": 6
     }
   ]
 }
