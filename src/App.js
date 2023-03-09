@@ -4,9 +4,8 @@ import Dashboard from "./dashboard/Dashboard"
 
 function App() {
   return (
-    <div>
-    <Staff/>
-    {/* <Dashboard/> */}
+    <div className='App'>
+    
     </div>
   );
 }
