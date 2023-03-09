@@ -1,11 +1,13 @@
-
-
 import './App.css';
+import Staff from './Components/staff/Staff';
 import Dashboard from "./dashboard/Dashboard"
 
 function App() {
   return (
-    <Dashboard/>
+    <div>
+    <Staff/>
+    {/* <Dashboard/> */}
+    </div>
   );
 }
 
