@@ -1,12 +1,52 @@
 {
   "Members": [
     {
+      "username": "Aarti Kumari",
+      "email":"aarti@gmail.com",
+      "password": "Aarti@123",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "New Delhi"
+    },
+    {
+      "username": "Prachi More",
+      "email":"prachi@gmail.com",
+      "password": "Prachi@123",
+      "user_type": "Supervisor",
+      "gender": "Female",
+      "address": "Madhya Pradesh"
+    },
+    {
+      "username": "Saloni Chawda",
+      "email":"saloni@gmail.com",
+      "password": "Saloni@123",
+      "user_type": "Supervisor",
+      "gender": "Female",
+      "address": "Madhya Pradesh"
+    },
+    {
       "username": "Ravindra",
+      "email":"ravindra@gmail.com",
       "password": "Ravi@123",
       "user_type": "Admin",
       "gender": "Male",
-      "address": "Uttar Pradesh",
-      "id": 4
+      "address": "Uttar Pradesh"
+    },
+    {
+      "username": "Sheetal Malviya",
+      "email":"sheetal@gmail.com",
+      "password": "Sheetal@123",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "Banglore"
+    },
+    {
+      "username": "Deepshikha",
+      "email":"deepshikha@gmail.com",
+      "password": "Deep@123",
+      "user_type": "Supervisor",
+      "gender": "Female",
+      "address": "Jharkhand"
     }
   ]
 }

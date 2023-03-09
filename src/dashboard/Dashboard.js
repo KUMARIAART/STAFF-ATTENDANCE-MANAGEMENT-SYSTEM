@@ -1,7 +1,10 @@
 import React from 'react'
-import Admin from '../Components/admin/Admin';
-import About from './About';
-import { useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'
+import Admin from '../Components/admin/Admin'
+import Staff from '../Components/staff/Staff'
+import Supervisor from '../Components/supervisor/Supervisor'
+import Login from '../Components/login/Login'
+import About from './About'
 export default function Dashboard() {
   let navigate = useNavigate()
   return (
