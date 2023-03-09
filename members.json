@@ -3,6 +3,7 @@
     {
       "id": 1,
       "username": "Aarti Kumari",
+      "email":"aarti@gmail.com",
       "password": "Aarti@123",
       "user_type": "Admin",
       "gender": "Female",
@@ -11,14 +12,15 @@
     {
       "id": 2,
       "username": "Prachi More",
+      "email":"prachi@gmail.com",
       "password": "Prachi@123",
       "user_type": "Supervisor",
       "gender": "Female",
       "address": "Madhya Pradesh"
     },
     {
-      "id": 3,
-      "username": "Saloni Chawada",
+      "username": "Saloni Chawda",
+      "email":"saloni@gmail.com",
       "password": "Saloni@123",
       "user_type": "Supervisor",
       "gender": "Female",
@@ -27,6 +29,7 @@
     {
       "id": 4,
       "username": "Ravindra",
+      "email":"ravindra@gmail.com",
       "password": "Ravi@123",
       "user_type": "Admin",
       "gender": "Male",
@@ -35,6 +38,7 @@
     {
       "id": 5,
       "username": "Sheetal Malviya",
+      "email":"sheetal@gmail.com",
       "password": "Sheetal@123",
       "user_type": "Admin",
       "gender": "Female",
@@ -43,6 +47,7 @@
     {
       "id": 6,
       "username": "Deepshikha",
+      "email":"deepshikha@gmail.com",
       "password": "Deep@123",
       "user_type": "Supervisor",
       "gender": "Female",
