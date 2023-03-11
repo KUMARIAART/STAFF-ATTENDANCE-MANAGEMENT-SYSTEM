@@ -1,46 +1,180 @@
 {
   "Members": [
     {
+      "id": 1,
       "username": "Aarti Kumari",
+      "email": "aarti@gmail.com",
       "password": "Aarti@123",
       "user_type": "Admin",
       "gender": "Female",
       "address": "New Delhi"
     },
     {
+      "id": 2,
       "username": "Prachi More",
+      "email": "prachi@gmail.com",
       "password": "Prachi@123",
       "user_type": "Supervisor",
       "gender": "Female",
       "address": "Madhya Pradesh"
     },
     {
-      "username": "Saloni Chawada",
+      "username": "Saloni Chawda",
+      "email": "saloni@gmail.com",
       "password": "Saloni@123",
       "user_type": "Supervisor",
       "gender": "Female",
       "address": "Madhya Pradesh"
     },
     {
+      "id": 4,
       "username": "Ravindra",
+      "email": "ravindra@gmail.com",
       "password": "Ravi@123",
       "user_type": "Admin",
       "gender": "Male",
       "address": "Uttar Pradesh"
     },
     {
+      "id": 5,
       "username": "Sheetal Malviya",
+      "email": "sheetal@gmail.com",
       "password": "Sheetal@123",
       "user_type": "Admin",
       "gender": "Female",
       "address": "Banglore"
     },
     {
+      "id": 6,
       "username": "Deepshikha",
+      "email": "deepshikha@gmail.com",
       "password": "Deep@123",
       "user_type": "Supervisor",
       "gender": "Female",
       "address": "Jharkhand"
+    },
+    {
+      "id": 7,
+      "username": "Shristhi",
+      "password": "Shristhi@123",
+      "user_type": "Supervisor",
+      "gender": "Female",
+      "address": "Bihar"
+    },
+    {
+      "id": "1cdcffdc-d2f3-4237-a5f9-3296a406b13a",
+      "username": "",
+      "password": "Ram@1",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "gujrat"
+    },
+    {
+      "id": "f6c1d768-a426-4b2d-b621-7a22a02a5178",
+      "username": "Ramshyam",
+      "password": "Ram@123",
+      "user_type": "Admin",
+      "gender": "Male",
+      "address": "Goa"
+    },
+    {
+      "id": "a8267e4c-e3a5-4399-847b-8fc68f8cb7c8",
+      "username": "Radha",
+      "password": "Radha@1",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "Jaipur"
+    },
+    {
+      "id": "8e6ec837-5d54-41ba-b80a-f454ff2c97cc",
+      "username": "Sheetal",
+      "password": "Sheetal@1",
+      "user_type": "Supervisor",
+      "gender": "Female",
+      "address": "M.P."
+    },
+    {
+      "id": "7c811899-f9c3-486d-bfc1-1142612c2cab",
+      "username": "Sonuu",
+      "password": "Sonu@1",
+      "user_type": "Admin",
+      "gender": "Male",
+      "address": "Delhi"
+    },
+    {
+      "id": "51180ac0-de17-43a0-8da0-521e5f5e58f0",
+      "username": "Geeta",
+      "password": "Geeta@1",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "Haryana"
+    },
+    {
+      "id": "dde3ac45-f7fb-4c66-86d6-7b0af815cb87",
+      "username": "Sonaa",
+      "password": "Sona@1",
+      "user_type": "Staff",
+      "gender": "Female",
+      "address": "Delhi"
+    },
+    {
+      "id": "590da750-45d1-4f2f-a3c9-106201be7c4b",
+      "username": "Nisha",
+      "password": "Nisha@1",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "Delhihi"
+    },
+    {
+      "id": "d314191a-1cd1-44a0-b94b-8c6f7ee9856f",
+      "username": "Geeta",
+      "password": "Geeta@1",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "Delhi"
+    },
+    {
+      "id": "391b72dd-609b-4427-accd-2d69e2972009",
+      "username": "Geeta",
+      "password": "G1@j",
+      "user_type": "Admin",
+      "gender": "Male",
+      "address": "yuuuuuuuuuuuuuuuuuuuuuuuuuuqw"
+    },
+    {
+      "id": "03d30df5-2dfc-412f-85ca-a9ab1c1d0e47",
+      "username": "Geeta",
+      "password": "Geet@1",
+      "user_type": "Staff",
+      "gender": "Male",
+      "address": "dtrdfgffgt"
+    },
+    {
+      "id": "dd41e019-9fb5-4f03-9839-4c8896c4b483",
+      "username": "Geeta",
+      "email": "Geeta@gmail.com",
+      "password": "Geeta@1",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "Tamil"
+    },
+    {
+      "id": "e1246824-f741-42c0-9758-136e7832012b",
+      "username": "Jyoti",
+      "email": "jyoti@gmail.com",
+      "password": "Jyoti@123",
+      "user_type": "Admin",
+      "gender": "Female",
+      "address": "Makshi"
+    },
+    {
+      "id": "2179b101-de81-4076-8694-1d7f9fb4dd98",
+      "username": "Anjali",
+      "email": "anjali@gmail.com",
+      "password": "Anjali@123",
+      "user_type": "Staff",
+      "gender": "Female",
+      "address": "Delhi"
     }
   ]
 }

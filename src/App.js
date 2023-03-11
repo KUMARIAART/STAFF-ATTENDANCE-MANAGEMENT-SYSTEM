@@ -1,11 +1,10 @@
-import './App.css';
-import Staff from './Components/staff/Staff';
-import Dashboard from "./dashboard/Dashboard"
+import './App.css'
+import Dashboard from './dashboard/Dashboard';
 
 function App() {
   return (
-    <div className='App'>
-    
+    <div className='container-fluid'>
+       <Dashboard/>
     </div>
   );
 }
