@@ -97,8 +97,8 @@ export default function Register() {
     }
 
     return (
-        <div className='container' >
-            <div className="row mt-5" style={{ margin: "auto" }} >
+        <div className='container'>
+            <div className="row justify-content-md-center mt-5" style={{ margin: "auto" }} >
                 <div className="col-md-8" >
                     <div className="bg-primary text-light text-center py-3 rounded mb-3 mt-3">
                         <h2>Registration Form</h2>
@@ -195,7 +195,7 @@ export default function Register() {
                                     disabled={!username || !mail || !password || !confirmPassword || !gender || !address}
                                     onClick={() => {
                                         submit()
-                                        
+
                                     }}
 
                                 >Add Members</button>

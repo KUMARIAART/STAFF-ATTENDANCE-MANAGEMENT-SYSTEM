@@ -1,3 +1,30 @@
 {
-  "attendance": []
+  "attendance": [
+    {
+      "username": "Saloni Chawda",
+      "email": "saloni@gmail.com",
+      "password": "Saloni@123",
+      "date": {
+        "2023-03-09": "Present",
+        "2023-03-10": "Present",
+        "2023-03-08": "Present"
+      },
+      "id": 1
+    },
+    {
+      "username": "Anjali",
+      "email": "anjali@gmail.com",
+      "password": "Anjali@123",
+      "date": {
+        "2023-03-10": "Present",
+        "2023-03-09": "Present",
+        "2023-03-11": "Present",
+        "2023-03-12": "Present",
+        "2023-03-08": "Present",
+        "2023-03-14": "Leave",
+        "2023-03-15": "Present"
+      },
+      "id": 2
+    }
+  ]
 }

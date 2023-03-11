@@ -31,10 +31,10 @@ const DleleteEmploye = () => {
         })
         fetch(`http://localhost:3001/Members/${unique}`, {
             method: 'DELETE'
-        }).then(res=>{
-            if(res.status===200){
+        }).then(res => {
+            if (res.status === 200) {
                 alert("member Removed Sucessfully")
-            }else{
+            } else {
                 alert("An error occurred while removing member")
             }
         })
@@ -60,7 +60,7 @@ const DleleteEmploye = () => {
 
     }
     return (
-        <>
+        <div className="container">
             <div className="row mt-5" >
                 <div className="col-md-6" style={{ margin: "auto" }}>
                     <div className="bg-primary text-light text-center py-3 rounded mb-3 mt-3">
@@ -94,7 +94,7 @@ const DleleteEmploye = () => {
                 </div>
             </div>
 
-        </>
+        </div>
     );
 }
 export default DleleteEmploye;

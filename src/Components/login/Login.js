@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import Dashboard from '../../dashboard/Dashboard'
-import Staff from '../staff/Staff'
-import loginContext from './LoginContext'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { login } from './LoginSlice'
+
+
 
 export default function Login(props) {
   const [username, setUsername] = useState("")
@@ -11,30 +12,33 @@ export default function Login(props) {
   const [password, setPassword] = useState("")
   const [data, setData] = useState([])
   const [usertype, setUserType] = useState("")
-  const [istype, setIstype] = useState("")
   const [error, setError] = useState("")
   const navigate = useNavigate();
-
-
+  const dispatch = useDispatch();
   useEffect(() => {
     fetch('http://localhost:3001/Members')
       .then((r) => r.json())
       .then((res) => {
         setData(res)
-        console.log(res)
+        // console.log(res)
       });
   }, []);
-  console.log('type', usertype);
+  // console.log('type', usertype);
   function MatchFields(data) {
-    console.log('wee', data);
+    // console.log('wee', data);
     let User = data.filter(type => {
-      console.log('s', type);
+      // console.log('s', type);
       if (type.email === email && type.password === password && type.user_type === usertype) {
+
         setError("")
-        setIstype(usertype)
         setUsername(type.username)
         navigate(`/${usertype}`)
 
+        dispatch(login({
+          username: type.username,
+          email,
+          password
+        }))
 
       }
       else {
@@ -46,14 +50,11 @@ export default function Login(props) {
     return User;
   }
   return (
-    <div>
-      <loginContext.Provider value={{ username, email, password }}>
-        {props.children}
-      </loginContext.Provider>
+    <div className='container'>
       <div className="row mt-5" >
         <div className="col-md-6" style={{ margin: "auto" }}>
           <div className="bg-primary text-light text-center py-3 rounded mb-3 mt-3">
-            <h2>Login</h2>
+            <h2>Login Here</h2>
           </div>
           <div className="mb-3 row">
             <label className="col-sm-3 col-form-label" type="email" >Email:</label>

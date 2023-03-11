@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 const About = () => {
     return (
         <div className="container">
 
             <div className="card mb-3">
-                <img style={{width:"50vw",height:"50vh"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5lkhvMOYvp02TXD6D6nEGxUJESv4Hfn_FKw&usqp=CAU" className="card-img-top" alt="..." />
+                <img style={{ width: "50vw", height: "50vh" }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5lkhvMOYvp02TXD6D6nEGxUJESv4Hfn_FKw&usqp=CAU" className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h2 className="card-title">Staff Attendance Management System</h2>
                     <p className="card-text">The Attendance Management System project was developed to help employers track and monitor  their employees.
