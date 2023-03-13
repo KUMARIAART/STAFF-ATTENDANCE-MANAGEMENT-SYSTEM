@@ -8,6 +8,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux';
 import userReducer from "./Components/login/LoginSlice"
 
+
 const mystore = configureStore({
   reducer: {
     user: userReducer
@@ -20,7 +21,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={mystore}>
+        
         <App />
+        
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
