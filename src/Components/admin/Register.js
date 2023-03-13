@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Button } from '@mui/material'
 import { v4 as uuidv4 } from "uuid";
 
 
-export default function Register() {
+const Register = () => {
+
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setconfirmPassword] = useState("")
@@ -16,8 +16,8 @@ export default function Register() {
     const [errorPassword, setErrorPassword] = useState("")
     const [errorConfirmPassword, setErrorConfirmPassword] = useState("")
     const [errorAddress, setErrorAddress] = useState("")
-    // console.log(username, password, confirmPassword,type,address)
-    function checkUsername(event) {
+
+    const checkUsername = (event) => {
         if (!event.trim()) {
             setErrorUsername("Username can't be empty")
         }
@@ -29,7 +29,8 @@ export default function Register() {
             setErrorUsername("")
         }
     }
-    function checkEmail(event) {
+
+    const checkEmail = (event) => {
         if (!(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(event))) {
             setErrorEmail("Invalid Email")
         }
@@ -38,7 +39,8 @@ export default function Register() {
             setErrorEmail("")
         }
     }
-    function checkPassword(event) {
+
+    const checkPassword = (event) => {
         let hasCaps = /[A-Z]/.test(event);
         let hasNums = /\d/.test(event)
         let hasSmallLetter = /[a-z]/.test(event)
@@ -55,7 +57,8 @@ export default function Register() {
             setErrorPassword("Password should contain atleast one \n Uppercase letter, lowercase letter, \n number and special characters &*@$. ")
         }
     }
-    function checkConfirmPassword(event) {
+
+    const checkConfirmPassword = (event) => {
         if (event === password) {
             setconfirmPassword(event)
             setErrorConfirmPassword("")
@@ -64,7 +67,8 @@ export default function Register() {
             setErrorConfirmPassword("ConfirmPassword and Password not matched")
         }
     }
-    function checkAddress(event) {
+
+    const checkAddress = (event) => {
         if (!event.trim()) {
             setErrorAddress("Address can't empty")
         }
@@ -73,8 +77,9 @@ export default function Register() {
             setErrorAddress("")
         }
     }
-    function submit() {
 
+    // Adding member in JSON server
+    const submit = () => {
         let memberObj = {
             "id": uuidv4(),
             "username": username,
@@ -84,48 +89,53 @@ export default function Register() {
             "gender": gender,
             "address": address
         }
-        console.log(memberObj);
         fetch("http://localhost:3001/Members", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(memberObj)
-        })
-            .then(res => {
+        }).then(res => {
+            if (res.status == 200) {
+                alert("Member added sucessfully")
                 return res.json()
-            })
-
+            }
+            else {
+                return Promise.reject(res.status)
+            }
+        }).then(data => {
+            return data
+        }).catch(error => {
+            console.log(error)
+        })
     }
 
     return (
         <div className='container'>
             <div className="row justify-content-md-center mt-5" style={{ margin: "auto" }} >
                 <div className="col-md-8" >
+
                     <div className="bg-primary text-light text-center py-3 rounded mb-3 mt-3">
                         <h2>Registration Form</h2>
                     </div>
+
                     <form>
                         <div className="mb-3 row">
                             <label className="col-sm-3 col-form-label">Username:</label>
                             <div className="col-sm-9">
-
                                 <input type="text" className="form-control" id="exampleFormControlInput1" onChange={(e) => {
                                     checkUsername(e.target.value)
                                 }} placeholder="Username" required />
-                                <p style={{ color: "red" }}>{errorUsername}</p>
+                                <p className='text-danger'>{errorUsername}</p>
                             </div>
-
                         </div>
 
                         <div className="mb-3 row">
                             <label className="col-sm-3 col-form-label">Email:</label>
                             <div className="col-sm-9">
-
                                 <input type="email" className="form-control" id="exampleFormControlInput5" onChange={(e) => {
                                     checkEmail(e.target.value)
                                 }} placeholder="email" required />
-                                <p style={{ color: "red" }}>{errorEmail}</p>
+                                <p className='text-danger'>{errorEmail}</p>
                             </div>
-
                         </div>
 
                         <div className="mb-3 row">
@@ -134,9 +144,8 @@ export default function Register() {
                                 <input type="password" className="form-control" id="exampleFormControlInput2" onChange={(e) => {
                                     checkPassword(e.target.value)
                                 }} placeholder="Password" required />
-                                <p style={{ color: "red" }}>{errorPassword}</p>
+                                <p className='text-danger'>{errorPassword}</p>
                             </div>
-
                         </div>
 
                         <div className="mb-3 row">
@@ -145,22 +154,20 @@ export default function Register() {
                                 <input type="password" className="form-control" id="exampleFormControlInput3" onChange={(e) => {
                                     checkConfirmPassword(e.target.value)
                                 }} placeholder="Confirm Password" required />
-                                <p style={{ color: "red" }}>{errorConfirmPassword}</p>
+                                <p className='text-danger'>{errorConfirmPassword}</p>
                             </div>
-
                         </div>
 
                         <div className="mb-3 row">
                             <label className="col-sm-3 col-form-label">User type:</label>
                             <div onChange={(e) => { setType(e.target.value) }} className="col-sm-9">
-                                <select className="form-select" aria-label="Default select example">
+                                <select className="form-select" >
                                     <option>Select one option</option>
                                     <option value="Staff">Staff</option>
                                     <option value="Admin">Admin</option>
                                     <option value="Supervisor">Supervisor</option>
                                 </select>
                             </div>
-
                         </div>
 
                         <div className="mb-3 row">
@@ -175,7 +182,6 @@ export default function Register() {
                                     <label className="form-check-label" htmlFor="inlineRadio2">Female</label>
                                 </div>
                             </div>
-
                         </div>
 
                         <div className="mb-3 row">
@@ -184,9 +190,8 @@ export default function Register() {
                                 <input type="text" className="form-control" id="exampleFormControlInput4" onChange={(e) => {
                                     checkAddress(e.target.value)
                                 }} placeholder="Address" required />
-                                <p style={{ color: "red" }}>{errorAddress}</p>
+                                <p className='text-danger'>{errorAddress}</p>
                             </div>
-
                         </div>
 
                         <div className="mb-3 row">
@@ -195,16 +200,15 @@ export default function Register() {
                                     disabled={!username || !mail || !password || !confirmPassword || !gender || !address}
                                     onClick={() => {
                                         submit()
-
                                     }}
-
                                 >Add Members</button>
                             </div>
                         </div>
-                    </form>
 
+                    </form>
                 </div>
             </div>
         </div>
     )
 }
+export default Register;

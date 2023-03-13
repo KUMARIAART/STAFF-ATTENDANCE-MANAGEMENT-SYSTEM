@@ -6,7 +6,7 @@ import Supervisor from '../Components/supervisor/Supervisor'
 import Login from '../Components/login/Login'
 import About from './About'
 export default function Dashboard() {
-  let navigate = useNavigate();
+  const navigate = useNavigate;
   return (
     <div style={{ overflowY: 'scroll', position: 'relative' }}>
       <div className='fixed w-full h-16'>

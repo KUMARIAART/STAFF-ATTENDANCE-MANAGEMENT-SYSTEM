@@ -1,27 +1,39 @@
 import { useState, useEffect } from "react"
+
 const DleleteEmploye = () => {
     const [membersEmail, setMembersEmail] = useState("");
     const [membersPassword, setmeMbersPassword] = useState("");
     const [status, setStatus] = useState("");
     const [staffStatus, setStaffStatus] = useState("");
+
     useEffect(() => {
+
+         // fetching the data from member JSON server
         fetch("http://localhost:3001/Members")
             .then(response => {
                 return response.json()
             })
             .then(data => {
                 setStatus(data)
+            }).catch(error => {
+                console.log(error);
             })
 
+         // fetching the data from attendance JSON server
         fetch("http://localhost:3002/attendance")
             .then(response => {
                 return response.json()
             })
             .then(data => {
                 setStaffStatus(data)
+            }).catch(error => {
+                console.log(error);
             })
+
     }, []);
-    function DeleteMembers() {
+
+    //Delete from member JSON server
+    const DeleteMembers = () => {
         let unique;
         let unique1 = status.find((item) => {
             if (item.email === membersEmail && item.password === membersPassword) {
@@ -37,9 +49,13 @@ const DleleteEmploye = () => {
             } else {
                 alert("An error occurred while removing member")
             }
+        }).catch(error => {
+            console.log(error);
         })
     }
-    function DeleteAttendance() {
+
+    // Delete from attendance JSON server
+    const DeleteAttendance = () => {
         let uniqueId;
         let flag = true
         let unique2 = staffStatus.find((item) => {
@@ -57,12 +73,20 @@ const DleleteEmploye = () => {
                 method: 'DELETE'
             })
         }
-
     }
+
+    const Delete = () => {
+        DeleteMembers();
+        DeleteAttendance();
+        setMembersEmail("")
+        setmeMbersPassword("")
+    }
+
     return (
         <div className="container">
             <div className="row mt-5" >
                 <div className="col-md-6" style={{ margin: "auto" }}>
+
                     <div className="bg-primary text-light text-center py-3 rounded mb-3 mt-3">
                         <h2>Delete Member</h2>
                     </div>
@@ -84,13 +108,11 @@ const DleleteEmploye = () => {
                     <div className="mb-3 row">
                         <div className="col-sm-12">
                             <button className='btn btn-success col-12 bg-primary' type="button" disabled={!membersEmail || !membersPassword} onClick={() => {
-                                DeleteMembers();
-                                DeleteAttendance();
-                                setMembersEmail("")
-                                setmeMbersPassword("")
+                                Delete();
                             }}>Dlelete</button>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 

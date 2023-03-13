@@ -159,15 +159,6 @@
       "address": "Tamil"
     },
     {
-      "id": "e1246824-f741-42c0-9758-136e7832012b",
-      "username": "Jyoti",
-      "email": "jyoti@gmail.com",
-      "password": "Jyoti@123",
-      "user_type": "Admin",
-      "gender": "Female",
-      "address": "Makshi"
-    },
-    {
       "id": "2179b101-de81-4076-8694-1d7f9fb4dd98",
       "username": "Anjali",
       "email": "anjali@gmail.com",
@@ -175,6 +166,15 @@
       "user_type": "Staff",
       "gender": "Female",
       "address": "Delhi"
+    },
+    {
+      "id": "6e75cc4c-1919-4543-aef9-0e0026cc5aa6",
+      "username": "Jyoti",
+      "email": "Jyoti@gmail.com",
+      "password": "Jyoti@123",
+      "user_type": "Staff",
+      "gender": "Female",
+      "address": "M.P."
     }
   ]
 }

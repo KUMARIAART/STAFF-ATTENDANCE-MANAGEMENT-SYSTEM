@@ -7,11 +7,12 @@ export default function Staff() {
   let [membersAttendanceDetail, setMembersAttendanceDetail] = useState([]);
   let [date, setDate] = useState("");
   let [presentOrLeave, setPresentOrLeave] = useState("");
-  // console.log(date, presentOrLeave);
-  const newUser = useSelector(temp => temp.user.value)
-  console.log(newUser);
+ 
+  // useSelector is allow user to use dispatched data
+  const {username,email,password} = useSelector(temp => temp.user.value)
+  
+  // Date dropdown array
   let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
   arr[0] = moment().subtract(3, 'days').format("YYYY-MM-DD");
   arr[1] = moment().subtract(2, 'days').format("YYYY-MM-DD");
   arr[2] = moment().subtract(1, 'days').format("YYYY-MM-DD");
@@ -23,10 +24,8 @@ export default function Staff() {
   arr[8] = moment().add(5, 'days').format("YYYY-MM-DD");
   arr[9] = moment().add(6, 'days').format("YYYY-MM-DD");
   arr[10] = moment().add(7, 'days').format("YYYY-MM-DD");
-  let username = newUser.username;
-  let email = newUser.email;
-  let password = newUser.password;
-  console.log(arr);
+
+ // GET METHOD
   useEffect(() => {
     fetch("http://localhost:3002/attendance")
       .then(response => {
@@ -45,23 +44,24 @@ export default function Staff() {
 
   }, []);
 
+  // Attendance marking function
   let postAttendance = (date, presentOrLeave) => {
     let id;
     let exist = false;
     let attendance = membersAttendanceDetail.find((item) => {
-      // console.log(item.username, item.password);
       if ((item.email === email && item.password === password)) {
         id = item.id;
         item["date"][date] = presentOrLeave
         exist = true
-        console.log(Object.keys(item.date), Object.values(item.date))
+        
         return item;
       }
       else {
         exist = false;
       }
     })
-    // console.log(attendance, id);
+    
+    // PATCH METHOD
     if (exist) {
       return fetch(`http://localhost:3002/attendance/${id}`,
         {
@@ -74,6 +74,7 @@ export default function Staff() {
       )
         .then(response => {
           if (response.ok) {
+            alert("Attendance Marked Successfully!")
             return response.json();
           }
           else {
@@ -84,6 +85,7 @@ export default function Staff() {
         )
         .catch(error => console.log(error));
     }
+    // POST METHOD
     else {
       console.log(date);
       let newUser = {
@@ -104,8 +106,21 @@ export default function Staff() {
           body: JSON.stringify(newUser)
         }
       )
+        .then(response => {
+          if (response.ok) {
+            alert("Attendance Marked Successfully!")
+            return response.json();
+          }
+          else {
+            return Promise.reject(response.status);
+          }
+        })
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
     }
   }
+
+  // Attendance marking form
   return (
     <div>
       <div className="row mt-5" >
@@ -114,10 +129,12 @@ export default function Staff() {
             <h2>Mark Attendance</h2>
           </div>
           <div className="mb-4 row">
+            {/* Date dropdown field*/}
             <label className="col-sm-2 col-form-label">Date:</label>
             <div className="col-sm-10">
-              <select value={date} onChange={(event) => setDate(event.target.value)} className="form-select" aria-label="Default select example">
+              <select value={date} onChange={(event) => setDate(event.target.value)} className="form-select" >
                 <option>Select date</option>
+
                 {arr.map((item, index) => {
                   let backgroundColor;
                   let color;
@@ -134,25 +151,31 @@ export default function Staff() {
             </div>
           </div>
           <div className="mb-4 row">
+            {/* Present or leave field */}
             <label htmlFor="attendance" className="col-sm-2 col-form-label">Mark As:</label>
             <div className='col-sm-5' onChange={(event) => setPresentOrLeave(event.target.value)}>
+
               <div className="form-check form-check-inline">
                 <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Present" style={{ border: "1px solid grey" }} />
                 <label className="form-check-label" htmlFor="inlineRadio1">Present</label>
               </div>
+
               <div className="form-check form-check-inline">
                 <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Leave" style={{ border: "1px solid grey" }} />
                 <label className="form-check-label" htmlFor="inlineRadio2">Leave</label>
               </div>
             </div>
           </div>
+
           <div className="mb-4 row">
+            {/* Submit button */}
             <div className="col-sm-12">
               <button className='btn btn-success col-12 bg-primary' onClick={() => postAttendance(date, presentOrLeave)} disabled={!date || !presentOrLeave}>Submit</button>
             </div>
           </div>
           <div className='mb-3 row'>
             <div className='col-sm-12 text-center mt-4 mb-4'>
+              {/* Navigate on login page */}
               <Link to="/" style={{ fontSize: '1.4em' }}>Logout</Link>
             </div>
           </div>

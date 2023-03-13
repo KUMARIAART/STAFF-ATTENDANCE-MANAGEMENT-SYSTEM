@@ -3,7 +3,7 @@ import Dashboard from './dashboard/Dashboard';
 
 function App() {
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid' data-testid='app'>
        <Dashboard/>
     </div>
   );
