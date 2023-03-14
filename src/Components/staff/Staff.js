@@ -26,7 +26,7 @@ export default function Staff() {
   arr[10] = moment().add(7, 'days').format("YYYY-MM-DD");
 
  // GET METHOD
-  useEffect(() => {
+  const fetchData=() => {
     fetch("http://localhost:3002/attendance")
       .then(response => {
         if (response.ok) {
@@ -42,10 +42,11 @@ export default function Staff() {
       })
       .catch(error => console.log(error));
 
-  }, []);
+  };
 
   // Attendance marking function
   let postAttendance = (date, presentOrLeave) => {
+    fetchData()
     let id;
     let exist = false;
     let attendance = membersAttendanceDetail.find((item) => {
@@ -60,7 +61,7 @@ export default function Staff() {
         exist = false;
       }
     })
-    
+    console.log(attendance);
     // PATCH METHOD
     if (exist) {
       return fetch(`http://localhost:3002/attendance/${id}`,
@@ -170,7 +171,7 @@ export default function Staff() {
           <div className="mb-4 row">
             {/* Submit button */}
             <div className="col-sm-12">
-              <button className='btn btn-success col-12 bg-primary' onClick={() => postAttendance(date, presentOrLeave)} disabled={!date || !presentOrLeave}>Submit</button>
+              <button data-testid='button' className='btn btn-success col-12 bg-primary' onClick={() => postAttendance(date, presentOrLeave)} disabled={!date || !presentOrLeave}>Submit</button>
             </div>
           </div>
           <div className='mb-3 row'>

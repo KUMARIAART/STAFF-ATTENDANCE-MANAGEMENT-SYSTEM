@@ -88,7 +88,7 @@ const DleleteEmploye = () => {
                 <div className="col-md-6" style={{ margin: "auto" }}>
 
                     <div className="bg-primary text-light text-center py-3 rounded mb-3 mt-3">
-                        <h2>Delete Member</h2>
+                        <h2 data-testid='heading'>Delete Member</h2>
                     </div>
 
                     <div className="mb-3 row">
@@ -107,9 +107,9 @@ const DleleteEmploye = () => {
 
                     <div className="mb-3 row">
                         <div className="col-sm-12">
-                            <button className='btn btn-success col-12 bg-primary' type="button" disabled={!membersEmail || !membersPassword} onClick={() => {
+                            <button data-testid='button' className='btn btn-success col-12 bg-primary' type="button" disabled={!membersEmail || !membersPassword} onClick={() => {
                                 Delete();
-                            }}>Dlelete</button>
+                            }}>Delete</button>
                         </div>
                     </div>
                     

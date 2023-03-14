@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom'
+import { Route, Routes, Link } from 'react-router-dom'
 import '../App.css'
 import Admin from '../Components/admin/Admin'
 import Staff from '../Components/staff/Staff'
@@ -6,17 +6,17 @@ import Supervisor from '../Components/supervisor/Supervisor'
 import Login from '../Components/login/Login'
 import About from './About'
 export default function Dashboard() {
-  const navigate = useNavigate;
+ 
   return (
     <div style={{ overflowY: 'scroll', position: 'relative' }}>
       <div className='fixed w-full h-16'>
         <nav className="navbar" style={{ background: "linear-gradient(to right, #0000cd,#00008b)", boxShadow: "0rem 0.1rem 0.1rem 0rem grey", zIndex: '1' }}>
           <div className="container text-light">
             <img src="https://tse1.mm.bing.net/th?id=OIP.XdUEvjYiW_RXGzryqW-eTAHaJt&pid=Api" alt="Logo" width="100" height="90" className="d-inline-block align-text-top" />
-            <h2 className="navbar-brand text-light"><b> Staff Attendance Management System</b></h2>
+            <h2 className="navbar-brand text-light"><b>Staff Attendance Management System</b></h2>
             <div className='d-flex'>
 
-              <button className="btn btn-outline-light " type="submit" onClick={() => navigate("/about")} style={{ marginLeft: "2vw" }}>About Us</button>
+              <Link to='/about'><button className="btn btn-outline-light " style={{ marginLeft: "2vw" }}>About Us</button></Link>
 
             </div>
           </div>
@@ -29,7 +29,7 @@ export default function Dashboard() {
           <Route path="/Staff" element={<Staff />} />
           <Route path="/Admin" element={<Admin />} />
           <Route path="/Supervisor" element={<Supervisor />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
 

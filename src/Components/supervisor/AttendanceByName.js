@@ -82,7 +82,7 @@ export default function AttendanceByName() {
 
                         <div className="mb-3 row">
                             <div className="col-sm-12">
-                                <button type='button' className='btn btn-success col-12 bg-primary'
+                                <button data-testid='button' type='button' className='btn btn-success col-12 bg-primary'
                                     disabled={!name}
                                     onClick={() => {
                                         search()

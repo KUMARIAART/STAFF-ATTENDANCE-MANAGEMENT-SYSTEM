@@ -10,8 +10,8 @@ export default function Admin() {
       <div className='d-flex flex-column'>
 
         <div className='d-flex justify-content-evenly align-self-center mt-5' style={{ width: '25%' }}>
-          <button className='bg-primary' onClick={() => { setFlag(true) }} style={{ padding: "1vh", fontSize: '1.1em' }} variant="contained">ADD STAFF MEMBER</button>
-          <button className='bg-primary' onClick={() => { setFlag(false) }} style={{ padding: "1vh", marginLeft: '1vw', fontSize: '1.1em' }} variant="contained">DELETE STAFF MEMBER</button>
+          <button className='bg-primary text-light' onClick={() => { setFlag(true) }} style={{ padding: "1vh", fontSize: '1.1em' }} variant="contained">ADD STAFF MEMBER</button>
+          <button className='bg-primary text-light' onClick={() => { setFlag(false) }} style={{ padding: "1vh", marginLeft: '1vw', fontSize: '1.1em' }} variant="contained">DELETE STAFF MEMBER</button>
         </div>
 
         <hr/>
