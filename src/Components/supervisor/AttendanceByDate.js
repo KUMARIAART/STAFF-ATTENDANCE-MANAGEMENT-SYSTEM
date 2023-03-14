@@ -21,6 +21,7 @@ export default function AttendanceByDate() {
         user.map((item) => {
             if (item['date'][date]) {
                 setFlag(true);
+                setdate("")
             }
         })
     }
@@ -60,13 +61,13 @@ export default function AttendanceByDate() {
                     <form>
 
                         <div className="bg-primary text-light text-center py-3 rounded mb-3 mt-3">
-                            <h2>Attendance Report By Date</h2>
+                            <h2 data-textid='heading'>Attendance Report By Date</h2>
                         </div>
 
                         <div className="mb-3 row">
                             <label className="col-sm-2 col-form-label">Date:</label>
                             <div className="col-sm-9">
-                                <input className="form-control" type='date' placeholder='enter your name' onChange={e => {
+                                <input value={date} className="form-control" type='date' placeholder='enter your name' onChange={e => {
                                     setFlag(false)
                                     setdate(e.target.value)
                                 }}></input>
@@ -75,7 +76,7 @@ export default function AttendanceByDate() {
 
                         <div className="mb-3 row">
                             <div className="col-sm-12">
-                                <button type='button' className='btn btn-success col-12 bg-primary'
+                                <button data-testid='button' type='button' className='btn btn-success col-12 bg-primary'
                                     disabled={!date}
                                     onClick={() => {
                                         search()

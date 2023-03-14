@@ -175,6 +175,15 @@
       "user_type": "Staff",
       "gender": "Female",
       "address": "M.P."
+    },
+    {
+      "id": "e264f707-0a9b-46e0-a38d-acb7481a7f0a",
+      "username": "Jyoti",
+      "email": "Jyoti@gmail.com",
+      "password": "Jyoti@1",
+      "user_type": "Supervisor",
+      "gender": "Female",
+      "address": "Madhya Pradesh"
     }
   ]
 }

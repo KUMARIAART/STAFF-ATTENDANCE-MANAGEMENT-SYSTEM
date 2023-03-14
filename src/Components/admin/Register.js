@@ -114,7 +114,7 @@ const Register = () => {
                 <div className="col-md-8" >
 
                     <div className="bg-primary text-light text-center py-3 rounded mb-3 mt-3">
-                        <h2>Registration Form</h2>
+                        <h2 data-testid='heading'>Registration Form</h2>
                     </div>
 
                     <form>
@@ -196,7 +196,7 @@ const Register = () => {
 
                         <div className="mb-3 row">
                             <div className="col-sm-12">
-                                <button type='submit' className='btn btn-success col-12 bg-primary'
+                                <button data-testid='button' type='submit' className='btn btn-success col-12 bg-primary'
                                     disabled={!username || !mail || !password || !confirmPassword || !gender || !address}
                                     onClick={() => {
                                         submit()

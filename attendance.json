@@ -21,11 +21,22 @@
         "2023-03-11": "Present",
         "2023-03-12": "Present",
         "2023-03-08": "Present",
-        "2023-03-14": "Leave",
+        "2023-03-14": "Present",
         "2023-03-15": "Present",
-        "2023-03-18": "Leave"
+        "2023-03-18": "Present",
+        "2023-03-13": "Present"
       },
       "id": 2
+    },
+    {
+      "username": "Jyoti",
+      "email": "Jyoti@gmail.com",
+      "password": "Jyoti@123",
+      "date": {
+        "2023-03-14": "Present",
+        "2023-03-13": "Leave"
+      },
+      "id": 3
     }
   ]
 }
